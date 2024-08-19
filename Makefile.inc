@@ -1,9 +1,19 @@
 mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 
 APPL_CXXOBJS += \
-	Walker.o \
-	LineMonitor.o \
-	LineTracer.o
+	Scenario.o \
+	Scene.o \
+	abstract_run.o \
+	LineSearchRun.o \
+	LineTraceRun.o \
+	RotateRun.o \
+	Scenario.o \
+	StraRun.o \
+	JudgeMent.o \
+	RotateAngleJudgeMent.o \
+	RunDistJudgeMent.o \
+	ColorJudgeMent.o \
+	GyroSensor.o \
 
 SRCLANG := c++
 
@@ -14,8 +24,9 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)app $(mkfile_path)unit
+APPL_DIRS += $(mkfile_path)Scenario $(mkfile_path)SpikeCon $(mkfile_path)JudgeMent
 
 INCLUDES += \
-	-I$(mkfile_path)app \
-	-I$(mkfile_path)unit
+	-I$(mkfile_path)Scenario \
+	-I$(mkfile_path)SpikeCon \
+	-I$(mkfile_path)JudgeMent \
