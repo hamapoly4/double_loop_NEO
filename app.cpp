@@ -37,16 +37,27 @@ void main_task(intptr_t unused)
 {
     system_create();
 
-    while (true)
-    {
-        gScenario->run();
-        if (gScenario->finish() == true)
-        {
-            break;
-        }
-    }
+    /* 周期ハンドラ開始 */
+    sta_cyc(CYC_RUNNER);
+
+    slp_tsk();  /* メインタスクの起床待ち */
+
+    /* 周期ハンドラ停止 */
+    stp_cyc(CYC_RUNNER);
 
     system_destroy();  /* 終了処理 */
 
     ext_tsk();  /* タスクの終了 */
+}
+
+void double_loop_NEO_task(intptr_t exinf)
+{
+    if (gScenario->finish() == true)
+    {
+        wup_tsk(MAIN_TASK);
+    }
+    else
+    {
+        gScenario->run();
+    }
 }
