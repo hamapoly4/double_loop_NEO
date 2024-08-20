@@ -46,7 +46,7 @@ void main_task(intptr_t unused)
         }
     }
 
-    user_system_destroy();  /* 終了処理 */
+    system_destroy();  /* 終了処理 */
 
     ext_tsk();  /* タスクの終了 */
 }

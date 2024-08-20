@@ -7,7 +7,6 @@ APPL_CXXOBJS += \
 	LineSearchRun.o \
 	LineTraceRun.o \
 	RotateRun.o \
-	Scenario.o \
 	StraRun.o \
 	JudgeMent.o \
 	RotateAngleJudgeMent.o \
