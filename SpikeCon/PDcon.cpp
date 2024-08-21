@@ -36,7 +36,7 @@ void PDcon::calcP()
     }
     else if (mRunmethod == LINETRACE)
     {
-        mdiff = PDcolor.getBrightness - mthreathold;
+        mdiff = PDcolor.getBrightness() - mthreathold;
     }
 
     mP_value = mdiff * mPgain;
@@ -45,5 +45,5 @@ void PDcon::calcP()
 void PDcon::calcD()
 {
     mD_value = (mdiff - mold_diff) * mDgain;
-    mold_diff = diff;
+    mold_diff = mdiff;
 }
