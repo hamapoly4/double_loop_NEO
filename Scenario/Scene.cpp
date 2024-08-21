@@ -13,33 +13,27 @@ Scene::Scene(unsigned char scene_no)
 		case 13:
 		case 15:
 			mRun[mcurrent_scene_no] = new RotateRun(RIGHT);
-			index_run = ROTATE_R;
 			break;
 		case  1:
 		case  6:
 		case 11:
 			mRun[mcurrent_scene_no] = new StraRun;
-			index_run = STRAIGHT;
 			break;
 		case  2:
 		case  7:
 		case 12:
 		case 14:
 			mRun[mcurrent_scene_no] = new LineSearchRun;
-			index_run = LINESEARCH;
 			break;
 		case  4:
 			mRun[mcurrent_scene_no] = new LineTraceRun(RIGHT);
-			index_run = LINETRACE_R;
 			break;
 		case  8:
 		case 10:
 			mRun[mcurrent_scene_no] = new RotateRun(LEFT);
-			index_run = ROTATE_L;
 			break;
 		case  9:
 			mRun[mcurrent_scene_no] = new LineTraceRun(LEFT);
-			index_run = LINETRACE_L;
 			break;
 		default:
 			break;

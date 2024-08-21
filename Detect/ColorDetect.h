@@ -5,7 +5,7 @@
 
 class ColorDetect {
 private:
-    static ColorSensor mColorSensor;
+    static ev3api::ColorSensor mColorSensor;
 
     enum eColor { BLACK, BLUE, ELSE, };
 

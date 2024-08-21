@@ -6,7 +6,7 @@
 
 class RotateAngleJudgeMent : public JudgeMent {
 private:
-	static GyroSensor mGyroSensor;
+	static ev3api::GyroSensor mGyroSensor;
 
 	enum eRota { RIGHT, LEFT, };
 	
