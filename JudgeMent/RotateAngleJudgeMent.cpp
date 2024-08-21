@@ -1,12 +1,14 @@
 ﻿#include "RotateAngleJudgeMent.h"
 #include <stdio.h>
 
-GyroSensor RotateAngleJudgeMent::mGyroSensor(0);
+using namespace ev3api;
 
-RotateAngleJudgeMent::RotateAngleJudgeMent(unsigned char rota, int angle)
-	: mrota(rota), mtarget_angle(angle)
+GyroSensor RotateAngleJudgeMent::mGyroSensor(PORT_4);
+
+RotateAngleJudgeMent::RotateAngleJudgeMent(unsigned char rota, int target_angle)
+	: mrota(rota), mtarget_angle(target_angle)
 {
-	;
+	mGyroSensor.reset();
 }
 
 bool RotateAngleJudgeMent::judge()
@@ -16,14 +18,18 @@ bool RotateAngleJudgeMent::judge()
 	if (mrota == RIGHT)
 	{
 		printf("右旋回角度：%d度\n", mcurrent_angle);
-		printf("　旋回角度：%d度\n", mtarget_angle);
-		return true;
+		if (mcurrent_angle >= mtarget_angle)
+		{
+			return true;
+		}
 	}
 	else if (mrota == LEFT)
 	{
 		printf("左旋回角度：%d度\n", mcurrent_angle);
-		printf("　旋回角度：%d度\n", mtarget_angle);
-		return true;
+		if (mcurrent_angle <= mtarget_angle)
+		{
+			return true;
+		}
 	}
 
 	return false;

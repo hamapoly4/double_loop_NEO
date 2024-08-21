@@ -6,14 +6,16 @@
 
 class RotateAngleJudgeMent : public JudgeMent {
 private:
-	enum { RIGHT, LEFT, };
+	static GyroSensor mGyroSensor;
+
+	enum eRota { RIGHT, LEFT, };
+	
 	int mtarget_angle;
 	int mcurrent_angle;
 	unsigned char mrota;
 
-	static GyroSensor mGyroSensor;
 public:
-	RotateAngleJudgeMent(unsigned char rota, int angle);
+	RotateAngleJudgeMent(unsigned char rota, int target_angle);
 	bool judge();
 };
 

@@ -14,20 +14,14 @@
 
 class Scene {
 private:
-	enum eRun {
-		ROTATE_R,   ROTATE_L,    STRAIGHT,
-		LINESEARCH, LINETRACE_R, LINETRACE_L,
-	};
-
 	enum eWhich { RIGHT, LEFT, BOTH, };
 
 	enum eColor { BLACK, BLUE, };
 
-	static Run* mRun[6];
-	static JudgeMent* mJudgeMent[16];
+	Run* mRun[16];
+	JudgeMent* mJudgeMent[16];
 
 	unsigned char mcurrent_scene_no;
-	unsigned char index_run;
 
 public:
 	Scene(unsigned char scene_no);

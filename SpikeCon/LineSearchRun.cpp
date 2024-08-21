@@ -9,6 +9,8 @@ LineSearchRun::LineSearchRun(int pwm)
 
 void LineSearchRun::run()
 {
+	LeftMotor.setPWM(mfix_pwm);
+	RightMotor.setPWM(mfix_pwm);
 	printf("LineSearch Run!!\n");
 	printf("pwm is %d\n", mfix_pwm);
 }

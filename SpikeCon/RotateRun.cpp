@@ -1,21 +1,23 @@
 ﻿#include "RotateRun.h"
 #include <stdio.h>
 
-RotateRun::RotateRun(unsigned char dire, int pwm)
-	: mdire(dire), Run(pwm)
+RotateRun::RotateRun(unsigned char rota, int pwm)
+	: mrota(rota), Run(pwm)
 {
 	;
 }
 
 void RotateRun::run()
 {
-	if (mdire == RIGHT)
+	if (mrota == RIGHT)
 	{
-		printf("Right ");
+		LeftMotor.setPWM(+mfix_pwm);
+		RightMotor.setPWM(-mfix_pwm);
 	}
-	else if (mdire == LEFT)
+	else if (mrota == LEFT)
 	{
-		printf("Left ");
+		LeftMotor.setPWM(-mfix_pwm);
+		RightMotor.setPWM(+mfix_pwm);
 	}
 	printf("Rotation Run!!\n");
 	printf("pwm is %d\n", mfix_pwm);

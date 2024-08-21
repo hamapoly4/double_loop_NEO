@@ -38,12 +38,12 @@ void main_task(intptr_t unused)
     system_create();
 
     /* 周期ハンドラ開始 */
-    sta_cyc(CYC_RUNNER);
+    sta_cyc(CYC_DOUBLE_LOOP_NEO);
 
     slp_tsk();  /* メインタスクの起床待ち */
 
     /* 周期ハンドラ停止 */
-    stp_cyc(CYC_RUNNER);
+    stp_cyc(CYC_DOUBLE_LOOP_NEO);
 
     system_destroy();  /* 終了処理 */
 

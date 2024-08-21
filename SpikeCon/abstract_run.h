@@ -9,14 +9,18 @@
 #ifndef ___ABSTRACT_CLASS
 #define ___ABSTRACT_CLASS	// インクルードカード
 
-#include <stdio.h>
+#include "Motor.h"
 
 class Run {
 protected:
-	int mfix_pwm;
-	Run(int pwm);
+	static ev3api::Motor LeftMotor;
+	static ev3api::Motor RightMotor;
+	
+	int mfix_pwm;	// 既定のPWM値
+	Run(int pwm);	// コンストラクタ
 public:
-	virtual void run() = 0;
+	virtual ~Run() = default; // 仮想デストラクタの定義
+	virtual void run() = 0;	// 純粋仮想関数
 };
 
 #endif // ___ABSTRACT_CLASS

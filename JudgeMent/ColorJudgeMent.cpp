@@ -1,15 +1,20 @@
 ﻿#include "ColorJudgeMent.h"
 #include <stdio.h>
 
-ColorJudgeMent::ColorJudgeMent(unsigned char color)
-	: mtarget_color(color)
+ColorJudgeMent::ColorJudgeMent(unsigned char target_color)
+	: mtarget_color(target_color)
 {
-	;
+	mColorDetect = new ColorDetect;
+}
+
+ColorJudgeMent::~ColorJudgeMent()
+{
+	delete mColorDetect;
 }
 
 bool ColorJudgeMent::judge()
 {
-	mcurrent_color = mtarget_color;
+	mcurrent_color = mColorDetect->detectColor();
 
 	if (mcurrent_color == mtarget_color)
 	{

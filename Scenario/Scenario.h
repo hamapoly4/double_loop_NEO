@@ -8,7 +8,7 @@ private:
 	static const unsigned char TOP = 0;
 	static const unsigned char LAST = 15;
 
-	static Scene* mScene[16];
+	Scene* mScene[16];
 	unsigned char mscene_no;
 	bool mscene_switch_flag;
 	bool mscenario_fin_flag;

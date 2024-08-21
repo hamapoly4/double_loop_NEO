@@ -2,15 +2,18 @@
 #define ___CLASS_COLORJUDGEMENT
 
 #include "JudgeMent.h"
+#include "ColorDetect.h"
 
 class ColorJudgeMent : public JudgeMent {
 private:
-	enum eColor { BLACK, BLUE };
+	ColorDetect *mColorDetect;
 
 	unsigned char mtarget_color;
 	unsigned char mcurrent_color;
+
 public:
-	ColorJudgeMent(unsigned char color);
+	ColorJudgeMent(unsigned char target_color);
+	~ColorJudgeMent();
 	bool judge();
 };
 

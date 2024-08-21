@@ -8,11 +8,12 @@ APPL_CXXOBJS += \
 	LineTraceRun.o \
 	RotateRun.o \
 	StraRun.o \
-	JudgeMent.o \
+	PDcon.o \
 	RotateAngleJudgeMent.o \
 	RunDistJudgeMent.o \
 	ColorJudgeMent.o \
-	GyroSensor.o \
+	RunDistDetect.o \
+	ColorDetect.o \
 
 SRCLANG := c++
 
@@ -23,9 +24,10 @@ include $(EV3RT_SDK_LIB_DIR)/libcpp-ev3/Makefile
 
 endif
 
-APPL_DIRS += $(mkfile_path)Scenario $(mkfile_path)SpikeCon $(mkfile_path)JudgeMent
+APPL_DIRS += $(mkfile_path)Scenario $(mkfile_path)SpikeCon $(mkfile_path)JudgeMent $(mkfile_path)Detect
 
 INCLUDES += \
 	-I$(mkfile_path)Scenario \
 	-I$(mkfile_path)SpikeCon \
 	-I$(mkfile_path)JudgeMent \
+	-I$(mkfile_path)Detect \

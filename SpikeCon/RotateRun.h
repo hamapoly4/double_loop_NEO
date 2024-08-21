@@ -5,11 +5,11 @@
 
 class RotateRun : public Run {
 private:
-	enum ROTA { RIGHT, LEFT, };
-	unsigned char mdire;
+	enum Rota { RIGHT, LEFT, };
+	unsigned char mrota;
 
 public:
-	RotateRun(unsigned char dire, int pwm = 35);
+	RotateRun(unsigned char rota, int pwm = 35);
 
 	void run();
 };
