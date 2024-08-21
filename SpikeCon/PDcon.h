@@ -22,7 +22,7 @@ private:
     unsigned char mRunmethod;
 
 public:
-    PDcont(unsigned char runmethod, int threathold, float Pgain, float Dgain);
+    PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain);
     int getTurn();
     void calcTurn();
     void calcP();

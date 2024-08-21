@@ -5,7 +5,7 @@ using namespace ev3api;
 GyroSensor PDcon::PDgyro(PORT_4);
 ColorSensor PDcon::PDcolor(PORT_2);
 
-PDcont::PDcont(unsigned char runmethod, int threathold, float Pgain, float Dgain)
+PDcon::PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain)
     : mRunmethod(runmethod), mthreathold(threathold),
       mPgain(Pgain), mDgain(Dgain), mold_diff(0)
 {
