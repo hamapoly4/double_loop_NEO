@@ -114,7 +114,7 @@ void ColorDetect::calcH()
 	}
 }
 
-void ColorDetect:calcS()
+void ColorDetect::calcS()
 {
 	float f;
 	f = (mmax - mmin) / mmax;
