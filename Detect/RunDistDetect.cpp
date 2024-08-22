@@ -64,7 +64,7 @@ void RunDistDetect::measureRunDist()
 
         mold_right_cnt = mright_cnt;
         mold_left_cnt = mleft_cnt;
-        printf("mright_old_cnt : %d\n", mright_old_cnt);
-        printf("mleft_old_cnt  : %d\n", mleft_old_cnt);
+        printf("mold_right_cnt : %d\n", mold_right_cnt);
+        printf("mold_left_cnt : %d\n", mold_left_cnt);
     }
 }
