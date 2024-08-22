@@ -15,6 +15,11 @@ PDcon::PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain)
     }
 }
 
+PDcon::~PDcon()
+{
+    ;
+}
+
 int PDcon::getTurn()
 {
     calcTurn();

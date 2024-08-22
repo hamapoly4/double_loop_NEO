@@ -10,6 +10,7 @@ private:
 
 public:
 	RotateRun(unsigned char rota, int pwm = 40);
+	~RotateRun();
 
 	void run();
 };

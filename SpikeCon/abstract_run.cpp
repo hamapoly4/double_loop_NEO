@@ -10,3 +10,8 @@ Run::Run(int pwm)
 {
 	;
 }
+
+Run::~Run()
+{
+	;
+}

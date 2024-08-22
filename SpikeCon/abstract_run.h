@@ -19,7 +19,7 @@ protected:
 	int mfix_pwm;	// 既定のPWM値
 	Run(int pwm);	// コンストラクタ
 public:
-	virtual ~Run() = default; // 仮想デストラクタの定義
+	virtual ~Run() = 0; // 純粋仮想デストラクタ
 	virtual void run() = 0;	// 純粋仮想関数
 };
 

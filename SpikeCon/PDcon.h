@@ -23,6 +23,7 @@ private:
 
 public:
     PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain);
+    ~PDcon();
     int getTurn();
     void calcTurn();
     void calcP();

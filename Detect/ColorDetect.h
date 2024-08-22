@@ -19,6 +19,7 @@ private:
 
 public:
     ColorDetect();
+    ~ColorDetect();
     unsigned char detectColor();
     void convHSV();
     void setRGB();

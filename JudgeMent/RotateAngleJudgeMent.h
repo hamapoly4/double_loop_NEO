@@ -16,6 +16,7 @@ private:
 
 public:
 	RotateAngleJudgeMent(unsigned char rota, int target_angle);
+	~RotateAngleJudgeMent();
 	bool judge();
 };
 

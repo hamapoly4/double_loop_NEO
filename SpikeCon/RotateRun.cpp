@@ -7,6 +7,11 @@ RotateRun::RotateRun(unsigned char rota, int pwm)
 	;
 }
 
+RotateRun::~RotateRun()
+{
+	;
+}
+
 void RotateRun::run()
 {
 	if (mrota == RIGHT)

@@ -11,6 +11,11 @@ RotateAngleJudgeMent::RotateAngleJudgeMent(unsigned char rota, int target_angle)
 	mGyroSensor.reset();
 }
 
+RotateAngleJudgeMent::~RotateAngleJudgeMent()
+{
+	;
+}
+
 bool RotateAngleJudgeMent::judge()
 {
 	mcurrent_angle = mGyroSensor.getAngle();

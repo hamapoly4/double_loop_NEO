@@ -3,7 +3,7 @@
 
 class JudgeMent {
 public:
-	virtual ~JudgeMent() = default;
+	virtual ~JudgeMent() = 0;
 	virtual bool judge() = 0;
 };
 

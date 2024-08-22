@@ -6,6 +6,7 @@
 class LineSearchRun : public Run {
 public:
 	LineSearchRun(int pwm = 35);
+	~LineSearchRun();
 
 	void run();
 };

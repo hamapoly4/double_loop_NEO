@@ -12,6 +12,11 @@ RunDistDetect::RunDistDetect(unsigned char tire)
     RightMotorEncoder.setCount(0);
 }
 
+RunDistDetect::~RunDistDetect()
+{
+    ;
+}
+
 float RunDistDetect::getRunDist()
 {
     measureRunDist();

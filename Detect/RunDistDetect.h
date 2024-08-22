@@ -23,6 +23,7 @@ private:
 
 public:
     RunDistDetect(unsigned char tire);
+    ~RunDistDetect();
     float getRunDist();
     void measureRunDist();
 };
