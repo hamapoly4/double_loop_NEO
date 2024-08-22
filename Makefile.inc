@@ -9,6 +9,7 @@ APPL_CXXOBJS += \
 	RotateRun.o \
 	StraRun.o \
 	PDcon.o \
+	JudgeMent.o \
 	RotateAngleJudgeMent.o \
 	RunDistJudgeMent.o \
 	ColorJudgeMent.o \
