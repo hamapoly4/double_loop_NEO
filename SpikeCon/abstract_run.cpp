@@ -1,4 +1,5 @@
 ﻿#include "abstract_run.h"
+#include <stdio.h>
 
 using namespace ev3api;
 
@@ -13,5 +14,7 @@ Run::Run(int pwm)
 
 Run::~Run()
 {
-	;
+	LeftMotor.stop();
+	RightMotor.stop();
+	printf("左右のモータを停止した！！\n");
 }
