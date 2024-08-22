@@ -17,13 +17,13 @@ void LineTraceRun::run()
 	mturn = mPDcon->getTurn();
 	if (medge == RIGHT)
 	{
-		LeftMotor.setPWM(mfix_pwm + mturn);
-		RightMotor.setPWM(mfix_pwm - mturn);
+		LeftMotor.setPWM(mfix_pwm - mturn);
+		RightMotor.setPWM(mfix_pwm + mturn);
 	}
 	else if (medge == LEFT)
 	{
-		LeftMotor.setPWM(mfix_pwm - mturn);
-		RightMotor.setPWM(mfix_pwm + mturn);
+		LeftMotor.setPWM(mfix_pwm + mturn);
+		RightMotor.setPWM(mfix_pwm - mturn);
 	}
 	printf("LineTrace Run!!\n");
 	printf("pwm is %d\n", mfix_pwm);
