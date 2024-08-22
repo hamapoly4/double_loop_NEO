@@ -23,16 +23,19 @@ void Scenario::run()
 
 void Scenario::switch_scene()
 {
-	if (mscene_no >= LAST)
+	if (mscene_switch_flag == true)
 	{
-		mscenario_fin_flag = true;
-	}
-	else if (mscene_switch_flag == true)
-	{
-		delete mScene[mscene_no];
-		mscene_no++;
-		mScene[mscene_no] = new Scene(mscene_no);
-		mscene_switch_flag = false;
+		if (mscene_no >= LAST)
+		{
+			mscenario_fin_flag = true;
+		}
+		else
+		{
+			delete mScene[mscene_no];
+			mscene_no++;
+			mScene[mscene_no] = new Scene(mscene_no);
+			mscene_switch_flag = false;
+		}
 	}
 }
 
