@@ -7,7 +7,8 @@ Motor RunDistDetect::LeftMotorEncoder(PORT_C);
 Motor RunDistDetect::RightMotorEncoder(PORT_B);
 
 RunDistDetect::RunDistDetect(unsigned char tire)
-    : mtire(tire), mold_left_cnt(0), mold_right_cnt(0)
+    : mtire(tire), mold_left_cnt(0), mold_right_cnt(0),
+      mleft_sum(0), mright_sum(0)
 {
     LeftMotorEncoder.setCount(0);
     RightMotorEncoder.setCount(0);
