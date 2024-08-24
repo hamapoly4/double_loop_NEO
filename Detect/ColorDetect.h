@@ -20,7 +20,7 @@ private:
 public:
     ColorDetect();
     ~ColorDetect();
-    unsigned char detectColor();
+    unsigned char getColor();
     void convHSV();
     void setRGB();
     void calcMax();

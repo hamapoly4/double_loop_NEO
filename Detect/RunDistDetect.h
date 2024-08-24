@@ -5,7 +5,7 @@
 
 class RunDistDetect {
 private:
-    const float mANGLE1DIST = 0.87266;
+    static const float mANGLE1DIST = 0.87266;
 
     static ev3api::Motor LeftMotorEncoder;
     static ev3api::Motor RightMotorEncoder;

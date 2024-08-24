@@ -15,7 +15,7 @@ ColorDetect::~ColorDetect()
 	;
 }
 
-unsigned char ColorDetect::detectColor()
+unsigned char ColorDetect::getColor()
 {
     convHSV();
 

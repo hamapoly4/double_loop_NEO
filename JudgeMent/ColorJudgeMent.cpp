@@ -14,7 +14,7 @@ ColorJudgeMent::~ColorJudgeMent()
 
 bool ColorJudgeMent::judge()
 {
-	mcurrent_color = mColorDetect->detectColor();
+	mcurrent_color = mColorDetect->getColor();
 
 	if (mcurrent_color == mtarget_color)
 	{
