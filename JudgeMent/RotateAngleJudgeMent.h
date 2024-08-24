@@ -13,6 +13,7 @@ private:
 	int mtarget_angle;
 	int mcurrent_angle;
 	unsigned char mrota;
+	bool angle_reset;
 
 public:
 	RotateAngleJudgeMent(unsigned char rota, int target_angle);

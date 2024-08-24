@@ -8,7 +8,7 @@ Motor RunDistDetect::RightMotorEncoder(PORT_B);
 
 RunDistDetect::RunDistDetect(unsigned char tire)
     : mtire(tire), mold_left_cnt(0), mold_right_cnt(0),
-      mleft_sum(0), mright_sum(0)
+      mleft_sum(0), mright_sum(0), count_reset(true)
 {
     LeftMotorEncoder.setCount(0);
     RightMotorEncoder.setCount(0);
@@ -24,6 +24,14 @@ RunDistDetect::~RunDistDetect()
 
 float RunDistDetect::getRunDist()
 {
+    if (count_reset == true)
+	{
+		count_reset = false;
+		LeftMotorEncoder.setCount(0);
+        RightMotorEncoder.setCount(0);
+		return 0;
+	}
+
     measureRunDist();
     printf("RunDistDetect::getRunDist関数におけるmrun_distの値：%f\n", mrun_dist);
     return mrun_dist;

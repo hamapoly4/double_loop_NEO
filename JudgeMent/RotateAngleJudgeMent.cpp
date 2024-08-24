@@ -6,9 +6,9 @@ using namespace ev3api;
 GyroSensor RotateAngleJudgeMent::mGyroSensor(PORT_4);
 
 RotateAngleJudgeMent::RotateAngleJudgeMent(unsigned char rota, int target_angle)
-	: mrota(rota), mtarget_angle(target_angle)
+	: mrota(rota), mtarget_angle(target_angle), angle_reset(true)
 {
-	mGyroSensor.reset();
+	;
 }
 
 RotateAngleJudgeMent::~RotateAngleJudgeMent()
@@ -18,6 +18,12 @@ RotateAngleJudgeMent::~RotateAngleJudgeMent()
 
 bool RotateAngleJudgeMent::judge()
 {
+	if (angle_reset == true)
+	{
+		angle_reset = false;
+		mGyroSensor.reset();
+		return false;
+	}
 	mcurrent_angle = mGyroSensor.getAngle();
 
 	if (mrota == RIGHT)
@@ -36,6 +42,4 @@ bool RotateAngleJudgeMent::judge()
 			return true;
 		}
 	}
-
-	return false;
 }

@@ -20,6 +20,7 @@ private:
     float mright_sum;
     float mrun_dist;
     unsigned char mtire;
+    bool count_reset;
 
 public:
     RunDistDetect(unsigned char tire);
