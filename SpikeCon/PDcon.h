@@ -20,6 +20,7 @@ private:
     int mD_value;
     int mturn;
     unsigned char mRunmethod;
+    bool angle_reset;
 
 public:
     PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain);

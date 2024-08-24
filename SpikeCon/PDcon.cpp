@@ -7,12 +7,9 @@ ColorSensor PDcon::PDcolor(PORT_2);
 
 PDcon::PDcon(unsigned char runmethod, int threathold, float Pgain, float Dgain)
     : mRunmethod(runmethod), mthreathold(threathold),
-      mPgain(Pgain), mDgain(Dgain), mold_diff(0)
+      mPgain(Pgain), mDgain(Dgain), mold_diff(0), angle_reset(false)
 {
-    if (mRunmethod == STRAIGHT)
-    {
-        PDgyro.reset();
-    }
+    ;
 }
 
 PDcon::~PDcon()
@@ -22,6 +19,12 @@ PDcon::~PDcon()
 
 int PDcon::getTurn()
 {
+    if (angle_reset == true)
+	{
+		angle_reset = false;
+		PDgyro.reset();
+		return 0;
+	}
     calcTurn();
     return mturn;
 }
@@ -52,3 +55,5 @@ void PDcon::calcD()
     mD_value = (mdiff - mold_diff) * mDgain;
     mold_diff = mdiff;
 }
+
+void resetAngle
